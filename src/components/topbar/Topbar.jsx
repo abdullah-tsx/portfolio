@@ -1,9 +1,10 @@
 import React from 'react'
 import PersonIcon from '@mui/icons-material/Person';
-import EmailIcon from '@mui/icons-material/Email';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import EmailIcon from '@mui/icons-material/Email';
 import './Topbar.scss';
+import TopbarItem from "./TopbarItem";
 
 const Topbar = ({isMenuOpen, onOpen: setIsMenuOpen, info}) => {
 
@@ -14,26 +15,10 @@ const Topbar = ({isMenuOpen, onOpen: setIsMenuOpen, info}) => {
           <a href="#intro" className="logo">
             abdullah.
           </a>
-          <div className="itemContainer">
-            <PersonIcon className="icon"/>
-            <span>{info.phone}</span>
-          </div>
-          <div className="itemContainer">
-            <EmailIcon className="icon"/>
-            <span>{info.email}</span>
-          </div>
-          <div className="itemContainer">
-            <a href={info.linkedin} target="_blank" rel="noreferrer">
-              <LinkedInIcon className="icon"/>
-              <span>Linkedin</span>
-            </a>
-          </div>
-          <div className="itemContainer">
-            <a href={info.github} target="_blank" rel="noreferrer">
-              <GitHubIcon className="icon"/>
-              <span>Github</span>
-            </a>
-          </div>
+          <TopbarItem link={`https://wa.me/${info?.phone?.replace(/ /g, "")}`} text={info?.phone} Icon={PersonIcon}/>
+          <TopbarItem link={`mailto:${info?.email}`} text={info?.email} Icon={EmailIcon}/>
+          <TopbarItem link={info?.linkedin} text={'LinkedIn'} Icon={LinkedInIcon}/>
+          <TopbarItem link={info?.github} text={'Github'} Icon={GitHubIcon}/>
 
         </div>
         <div className="right">

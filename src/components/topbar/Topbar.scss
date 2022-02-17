@@ -27,29 +27,6 @@
         color: inherit;
         margin-right: 40px;
       }
-
-      .itemContainer {
-        display: flex;
-        align-items: center;
-        margin-left: 30px;
-
-        a {
-          display: flex;
-          align-items: center;
-          text-decoration: none;
-          color: inherit;
-        }
-
-        .icon {
-          font-size: 18px;
-          margin-right: 5px;
-        }
-
-        span {
-          font-size: 15px;
-          font-weight: 500;
-        }
-      }
     }
 
     .right {
