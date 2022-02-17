@@ -47,6 +47,14 @@ export const getInfo = async () => {
   } catch (e) {
 
   }
+}
 
+export const getTestimonials = async () => {
+  try {
+    const col = collection(db, 'testimonials');
 
+    const data = await getDocs(col);
+    return data.docs.map((doc) => ({...doc.data(), id: doc.id}));
+  } catch (e) {
+  }
 }

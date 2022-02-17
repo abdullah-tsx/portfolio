@@ -1,5 +1,5 @@
-import { getCategories, getProjects } from 'helper/api';
-import React, { useEffect, useState } from 'react';
+import {getCategories, getProjects} from 'helper/api';
+import React, {useEffect, useState} from 'react';
 import './Portfolio.scss';
 import PortfolioList from './PortfolioList';
 
@@ -25,23 +25,26 @@ const Portfolio = () => {
       <ul>
         {categories && categories.map((category) => {
           // @ts-ignore
-          return <PortfolioList key={category.id} title={category.title} active={selected === +category.id} setSelected={setSelected} itemId={+category.id} />
+          return <PortfolioList key={category.id} title={category.title} active={selected === +category.id}
+                                setSelected={setSelected} itemId={+category.id}/>
         })}
       </ul>
       <div className="container">
         {projects &&
-          projects.filter((project) => { return project.category.includes(selected) })
+          projects.filter((project) => {
+            return project.category.includes(selected)
+          })
             .map((project) => {
               return (
                 project.url ? <a href={project.url || '/#'} key={project.id} target="_blank" rel="noreferrer">
-                  <div className="item">
-                    <img src={project.imageURL} alt={project.alt} />
-                    <h3>{project.title}</h3>
-                  </div>
-                </a>
+                    <div className="item">
+                      <img src={project.imageURL} alt={project.alt}/>
+                      <h3>{project.title}</h3>
+                    </div>
+                  </a>
                   :
                   <div className="item">
-                    <img src={project.imageURL} alt={project.alt} />
+                    <img src={project.imageURL} alt={project.alt}/>
                     <h3>{project.title}</h3>
                   </div>
               )
