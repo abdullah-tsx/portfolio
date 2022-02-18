@@ -1,6 +1,7 @@
 import React, {useRef, useState} from 'react'
 import './Contact.scss';
 import {Alert, Snackbar} from "@mui/material";
+import {sendEmail} from "../../helper/email";
 //import emailjs from '@emailjs/browser';
 
 const Contact = () => {
@@ -15,6 +16,15 @@ const Contact = () => {
     const email = emailRef.current.value;
     const msg = msgRef.current.value;
     const name = nameRef.current.value;
+
+    const formData = {
+      email: emailRef.current.value,
+      name: nameRef.current.value,
+      msg: msgRef.current.value,
+    }
+
+    await sendEmail(formData);
+
     setFormSubmitted(true);
 
     emailRef.current.value = '';

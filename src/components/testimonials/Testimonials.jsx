@@ -14,7 +14,7 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <div className="testimonials">
+    <div className="testimonials" id="testimonials">
       <h1>Testimonials</h1>
       <div className="container">
         {testimonials && testimonials.map((testimonial) => {
