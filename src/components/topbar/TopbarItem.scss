@@ -1,7 +1,13 @@
+@import '../../global.scss';
+
 .itemContainer {
   display: flex;
   align-items: center;
   margin-left: 30px;
+
+  @include mobile {
+    display: none;
+  }
 
   a {
     display: flex;

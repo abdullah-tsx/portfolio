@@ -4,25 +4,44 @@
   background-color: white;
   display: flex;
 
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .left {
     flex: 0.5;
     overflow: hidden;
 
+    @include mobile {
+      flex: 0.46;
+    }
+
     .imgContainer {
       width: 1000px;
       height: 1000px;
-      background-color: crimson;
+      background-color: $secondaryColor;
       border-radius: 50%;
       display: flex;
       align-items: flex-end;
       justify-content: center;
       float: right;
 
+      @include mobile {
+        align-items: flex-start;
+        width: 900px;
+        height: 900px
+      }
+
       img {
         height: 70%;
+        @include mobile {
+          height: 40%;
+        }
       }
     }
   }
+
   .right {
     flex: 0.5;
     position: relative;
@@ -35,19 +54,36 @@
       flex-direction: column;
       justify-content: center;
 
+      @include mobile {
+        padding-left: 0;
+        align-items: center;
+        height: 70%;
+      }
+
       h1 {
         font-size: 60px;
         margin: 10px 0;
+        @include mobile {
+          font-size: 35px;
+        }
       }
+
       h2 {
         font-size: 35px;
+        @include mobile {
+          font-size: 25px;
+        }
       }
+
       h3 {
         font-size: 30px;
+        @include mobile {
+          font-size: 25px;
+        }
 
         span {
           font-size: inherit;
-          color: crimson;
+          color: $secondaryColor;
         }
 
         .ityped-cursor {
@@ -64,6 +100,7 @@
         }
       }
     }
+
     a {
       position: absolute;
       bottom: 10px;

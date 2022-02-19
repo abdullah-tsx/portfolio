@@ -1,2 +1,12 @@
 $topHeight: 70;
 $mainColor: #15023a;
+$secondaryColor: crimson;
+
+$mobileWidth: 950px;
+
+
+@mixin mobile {
+  @media (max-width: #{$mobileWidth}) {
+    @content
+  }
+}
